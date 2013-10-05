@@ -1,0 +1,21 @@
+﻿<html>
+<head><title>SimpleBlockIt Options</title>
+<style>
+	body {
+		font-family:trebuchet ms;
+		font-size:80%;
+	}
+
+</style>
+</head>
+<body>
+<h2>SimpleBlockIt Options</h2>
+<p>Enter list of urls to be blocked<br/><br/>Synthax used is same as here <a href="https://developer.chrome.com/extensions/match_patterns.html" target="_blank">https://developer.chrome.com/extensions/match_patterns.html</a></p>
+<p>Urls list: (Each line, new rule. Empty lines, and lines starting with ";" are ignored)</p>
+<textarea id="urls" name="urls" cols="50" rows="10" style="width:99%"></textarea>
+<br>
+<input id="save" type="button" value="Save"/><div id="status"></div>
+<p style="padding-top:50px;color: gray;">I made this script, mostly, for myself. I made it fast and kept it simple.<br/>You could drop bug reports on my email. I'll try to fix problems as soon as possible.</p>
+<script src="options.js"></script>
+</body>
+</html>

@@ -1,0 +1,12 @@
+{
+   "background": {
+      "scripts": [ "background.js" ]
+   },
+   "description": "This extension is used to block unwanted urls.",
+   "key": "MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQDQHm1F6Zl/BBp0c/BaigCz5U3FIUYHu3z6J6RS1i3bAhfExnZigAsxphhUz6nNlYMfNl61It2+qDEcg9EH8rjhHO2QCTj36m8YIyv6r7POAGRhCNMT8UrACz7gopGPCLs9VuRsjZqfpwjP8hvyByChnq8SZcz7EDJKgKqSxV691QIDAQAB",
+   "manifest_version": 2,
+   "name": "SimpleBlockIt",
+   "options_page": "options.html",
+   "permissions": [ "webRequest", "webRequestBlocking", "cookies", "http://*/*", "https://*/*", "storage" ],
+   "version": "1.0.1"
+}
