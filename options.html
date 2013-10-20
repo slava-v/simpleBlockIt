@@ -5,17 +5,39 @@
 		font-family:trebuchet ms;
 		font-size:80%;
 	}
-
+	pre {
+		background-color: #F5F5F5;
+		font-size: 10pt;
+		margin: 1em 0 0 0;
+		overflow: auto;
+		padding: .99em;
+		position: relative;
+		word-wrap: break-word;
+	}
+	.code, code, pre {
+		color: #080;
+		font-family: monospace;
+	}
+	.pln {color:#000;}
+	.tag {color:#008;}
+	.atn {color:#606;}
 </style>
 </head>
 <body>
 <h2>SimpleBlockIt Options</h2>
 <p>Enter list of urls to be blocked<br/><br/>Synthax used is same as here <a href="https://developer.chrome.com/extensions/match_patterns.html" target="_blank">https://developer.chrome.com/extensions/match_patterns.html</a></p>
 <p>Urls list: (Each line, new rule. Empty lines, and lines starting with ";" are ignored)</p>
+<h3>Expressions</h3>
 <textarea id="urls" name="urls" cols="50" rows="10" style="width:99%"></textarea>
-<br>
-<input id="save" type="button" value="Save"/><div id="status"></div>
-<p style="padding-top:50px;color: gray;">I made this script, mostly, for myself. I made it fast and kept it simple.<br/>You could drop bug reports on my email. I'll try to fix problems as soon as possible.</p>
+<h3>Expression Rules</h3>
+<pre class="prettyprint"><em><span class="tag">&lt;url-pattern&gt;</span></em><span class="pln"> := </span><em><span class="tag">&lt;scheme&gt;</span></em><span class="pln">://</span><em><span class="tag">&lt;host&gt;</span></em><em><span class="tag">&lt;path&gt;</span></em><span class="pln">
+</span><em><span class="tag">&lt;scheme&gt;</span></em><span class="pln"> := '*' | 'http' | 'https' | 'file' | 'ftp' | 'chrome-extension'
+</span><em><span class="tag">&lt;host&gt;</span></em><span class="pln"> := '*' | '*.' </span><em><span class="tag">&lt;any</span><span class="pln"> </span><span class="atn">char</span><span class="pln"> </span><span class="atn">except</span><span class="pln"> </span><span class="atv">'/'</span><span class="pln"> </span><span class="atn">and</span><span class="pln"> </span><span class="atv">'*'</span><span class="tag">&gt;</span></em><span class="pln">+
+</span><em><span class="tag">&lt;path&gt;</span></em><span class="pln"> := '/' </span><em><span class="tag">&lt;any</span><span class="pln"> </span><span class="atn">chars</span><span class="tag">&gt;</span></em>
+</pre>
+<input id="save" type="button" value="Save" style="font-size:120%;font-weight:bold"/><div id="status"></div>
+<p style="color:gray;">I made this script, mostly, for myself. I made it fast and kept it simple. You could drop bug reports on my email. I'll try to fix problems as soon as possible.</p>
+<p style="color:red">URL rules are not validated. If the extension refuses to work that is because the expressions problems</p>
 <script src="options.js"></script>
 </body>
 </html>

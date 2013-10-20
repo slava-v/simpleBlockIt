@@ -1,5 +1,4 @@
-﻿var storage = chrome.storage.local;
-
+var storage = chrome.storage.local;
 
 // Process urls
 function loadUrls(stringToLoad){
@@ -15,7 +14,8 @@ function loadUrls(stringToLoad){
 			i++;
 		}
 	}
-	console.log(urls);
+	//console.log(urls);
+	//urls=[];
 	try{
 		chrome.webRequest.onBeforeRequest.addListener(
 		  function(details) { return {cancel: true}; },
@@ -24,7 +24,7 @@ function loadUrls(stringToLoad){
 		);
 	} catch(e){
 		//console.log(e);
-		//console.log(e.message);
+		console.log(e.message);
 		alert(e.message);
 	}
 }
@@ -34,10 +34,10 @@ chrome.storage.onChanged.addListener(function(changes, areaName) {
 	//console.log(changes);
 	if (changes.urls.newValue){
 		loadUrls(changes.urls.newValue);
-	} else { 
+	} else {
 		loadUrls("");
 	}
-	
+
 });
 
 //Load settings
@@ -46,5 +46,3 @@ storage.get('urls', function(items) {
 		loadUrls(items.urls);
 	}
 });
-
-
